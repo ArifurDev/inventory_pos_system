@@ -33,4 +33,10 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
 
+        <!-- DataTables -->
+        <link href="{{ asset('dashbord') }}/assets/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+        <!--toastr-->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+
         <script src="{{ asset('dashbord') }}/js/modernizr.min.js"></script>

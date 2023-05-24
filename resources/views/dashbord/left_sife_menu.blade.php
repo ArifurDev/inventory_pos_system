@@ -26,10 +26,10 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="#" class="waves-effect"><i class="md md-mail"></i><span> Empolyee </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <a href="#" class="waves-effect"><i class="ion-person-add"></i><span> Empolyee </span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('create.empolyee') }}">Create Empolyee</a></li>
-                        <li><a href="email-compose.html">All Empolyee</a></li>
+                        <li><a href="{{ route('show.empolyee') }}">All Empolyee</a></li>
                     </ul>
                 </li>
 

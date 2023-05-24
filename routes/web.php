@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::middleware('auth')->group(function () {
         Route::get('/create/empolyee', [EmpolyeeController::class, 'create'])->name('create.empolyee');
         Route::post('/create/empolyee', [EmpolyeeController::class, 'store'])->name('store.empolyee');
+        Route::get('/show/all/empolyee', [EmpolyeeController::class, 'index'])->name('show.empolyee');
     });
 
 

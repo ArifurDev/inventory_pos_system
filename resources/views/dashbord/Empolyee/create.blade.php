@@ -33,7 +33,17 @@
                             <div class="col-md-8 ">
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><h3 class="panel-title">Add Empolyee</h3></div>
+
                                     <div class="panel-body">
+                                        @if ($errors->any())
+                                            @foreach ($errors->all() as $error)
+                                                    <ul>
+                                                        <li>
+                                                            <p class="text-light">{{ $error }}</p>
+                                                        </li>
+                                                    </ul>
+                                            @endforeach
+                                        @endif
                                         <form role="form"  action="{{ route('store.empolyee') }}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group">

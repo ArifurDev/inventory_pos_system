@@ -12,7 +12,8 @@ class EmpolyeeController extends Controller
      */
     public function index()
     {
-        //
+        $empolyees = empolyee::all();
+        return view('dashbord.Empolyee.show',compact('empolyees'));
     }
 
     /**
@@ -54,6 +55,7 @@ class EmpolyeeController extends Controller
         $empolyee->name = $request->name;
         $empolyee->email = $request->email;
         $empolyee->phone = $request->phone;
+        $empolyee->nid_number = $request->nid_number;
         $empolyee->salary = $request->salary;
         $empolyee->vacation = $request->vacation;
         $empolyee->experience = $request->experience;
@@ -61,7 +63,11 @@ class EmpolyeeController extends Controller
         $empolyee->address = $request->address;
         $empolyee->photo = $file_name;
         $empolyee->save();
-        return redirect()->back()->withSuccess('Empolyee Insert Successfull');
+        $notification = array(
+            'message' => 'Empolyee Insert Successfull',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
 
     }
 
@@ -70,7 +76,7 @@ class EmpolyeeController extends Controller
      */
     public function show(empolyee $empolyee)
     {
-        //
+
     }
 
     /**
@@ -96,4 +102,9 @@ class EmpolyeeController extends Controller
     {
         //
     }
+
+
+
+
+
 }
