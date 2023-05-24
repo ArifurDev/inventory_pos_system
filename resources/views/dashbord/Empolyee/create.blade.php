@@ -34,7 +34,8 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading"><h3 class="panel-title">Add Empolyee</h3></div>
                                     <div class="panel-body">
-                                        <form role="form">
+                                        <form role="form"  action="{{ route('store.empolyee') }}" method="POST" enctype="multipart/form-data">
+                                            @csrf
                                             <div class="form-group">
                                                 <label for="name">Name</label>
                                                 <input type="text" class="form-control" id="name" placeholder="Enter Full Name" name="name">
@@ -72,8 +73,9 @@
                                                 <input type="text" class="form-control" id="Address" placeholder="Address" name="address">
                                             </div>
                                              <div class="form-group">
+                                                <img  style="width: 70px; height: 70px; " src="" id="image" ><br>
                                                 <label for="Photo">Photo</label>
-                                                <input type="file" class="form-control" id="Photo" name="photo">
+                                                <input type="file" class="form-control" id="photo"  name="photo" accept="image/*" onchange="readURL(this)">
                                             </div>
 
                                             <button type="submit" class="btn btn-purple waves-effect waves-light">Submit</button>
@@ -101,6 +103,19 @@
 
         <!-- END wrapper -->
        @include('dashbord.script')<!--script link-->
+        <!-- COPY TO JAVASCRIPT SECTION  -->
+        <script type="text/javascript">
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        $('#image')
+                            .attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
 
+        </script>
     </body>
 </html>

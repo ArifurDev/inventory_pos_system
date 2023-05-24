@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\empolyee;
 use Illuminate\Http\Request;
-
+use Intervention\Image\Facades\Image;
 class EmpolyeeController extends Controller
 {
     /**
@@ -28,7 +28,41 @@ class EmpolyeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:empolyees',
+            'phone' => 'required|unique:empolyees',
+            'nid_number'  => 'required|unique:empolyees',
+            'salary' => 'required',
+            'vacation' => 'required',
+            'experience' => 'required',
+            'city' => 'required',
+            'address' =>'required',
+            'photo' =>'required|mimes:png,jpg',
+
+        ]);
+
+        //image upload image
+
+        $file_name = auth()->id() . '-' . time() . '.' . $request->file('photo')->getClientOriginalExtension();
+        $img = Image::make($request->file('photo'));
+        $img->save(base_path('public/upload/empolyee_image/' . $file_name), 80);
+
+        //Insert data with empolyee
+
+        $empolyee = new empolyee;
+        $empolyee->name = $request->name;
+        $empolyee->email = $request->email;
+        $empolyee->phone = $request->phone;
+        $empolyee->salary = $request->salary;
+        $empolyee->vacation = $request->vacation;
+        $empolyee->experience = $request->experience;
+        $empolyee->city = $request->city;
+        $empolyee->address = $request->address;
+        $empolyee->photo = $file_name;
+        $empolyee->save();
+        return redirect()->back()->withSuccess('Empolyee Insert Successfull');
+
     }
 
     /**
