@@ -38,6 +38,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/create/empolyee', [EmpolyeeController::class, 'create'])->name('create.empolyee');
         Route::post('/create/empolyee', [EmpolyeeController::class, 'store'])->name('store.empolyee');
         Route::get('/show/all/empolyee', [EmpolyeeController::class, 'index'])->name('show.empolyee');
+        Route::get('/edit/empolyee/{empolyee}', [EmpolyeeController::class, 'edit'])->name('edit.empolyee');
+        Route::post('/edit/empolyee/{id}', [EmpolyeeController::class, 'update'])->name('update.empolyee');
+        Route::get('/single/view/empolyee/{empolyee}', [EmpolyeeController::class, 'show'])->name('single.empolyee');
+        Route::get('/restore/empolyee/{id}', [EmpolyeeController::class, 'restore'])->name('restore.empolyee');
+        Route::get('/destroy/all/empolyee/{empolyee}', [EmpolyeeController::class, 'destroy'])->name('destroy.empolyee');
+        Route::get('/delete/empolyee/{empolyee}', [EmpolyeeController::class, 'delete'])->name('delete.empolyee');
     });
 
 

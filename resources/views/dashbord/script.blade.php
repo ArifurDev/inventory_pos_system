@@ -46,6 +46,9 @@
 <!-- Todo -->
 <script src="{{ asset('dashbord') }}/js/jquery.todo.js"></script>
 
+<!-- responsive-table-->
+<script src="{{ asset('dashbord') }}/assets/responsive-table/rwd-table.min.js" type="text/javascript"></script>
+
 <!-- toastr   -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script>

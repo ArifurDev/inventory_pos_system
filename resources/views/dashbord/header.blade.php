@@ -22,6 +22,9 @@
         <!-- sweet alerts -->
         <link href="{{ asset('dashbord') }}/assets/sweet-alert/sweet-alert.min.css" rel="stylesheet">
 
+        <!-- Responsive-table -->
+        <link href="{{ asset('dashbord') }}/assets/responsive-table/rwd-table.min.css" rel="stylesheet" type="text/css" media="screen"/>
+
         <!-- Custom Files -->
         <link href="{{ asset('dashbord') }}/css/helper.css" rel="stylesheet" type="text/css" />
         <link href="{{ asset('dashbord') }}/css/style.css" rel="stylesheet" type="text/css" />

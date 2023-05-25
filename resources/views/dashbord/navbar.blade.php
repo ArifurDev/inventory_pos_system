@@ -92,7 +92,12 @@
                             <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile</a></li>
                             <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
                             <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
-                            <li><a href="javascript:void(0)"><i class="md md-settings-power"></i> Logout</a></li>
+                            <li>
+                                <form action="{{ route('logout') }}" method="post" class="ml-1">
+                                    @csrf
+                                   <button type="submit" ><i class="md md-settings-power"></i>Logout</button>
+                                </form>
+                            </li>
                         </ul>
                     </li>
                 </ul>

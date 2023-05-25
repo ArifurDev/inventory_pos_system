@@ -22,7 +22,7 @@
         <div id="sidebar-menu">
             <ul>
                 <li>
-                    <a href="index.html" class="waves-effect active"><i class="md md-home"></i><span> Dashboard </span></a>
+                    <a href="{{ url('/dashboard') }}" class="waves-effect active"><i class="md md-home"></i><span> Dashboard </span></a>
                 </li>
 
                 <li class="has_sub">
