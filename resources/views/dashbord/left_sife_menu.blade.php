@@ -26,30 +26,18 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="#" class="waves-effect"><i class="ion-person-add"></i><span> Empolyee </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <a href="#" class="waves-effect"><i class="md md-group-add"></i><span> Empolyee </span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('create.empolyee') }}">Create Empolyee</a></li>
                         <li><a href="{{ route('show.empolyee') }}">All Empolyee</a></li>
                     </ul>
                 </li>
 
-                <li>
-                    <a href="calendar.html" class="waves-effect"><i class="md md-event"></i><span> Calendar </span></a>
-                </li>
-
                 <li class="has_sub">
-                    <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Elements </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                    <a href="#" class="waves-effect"><i class="md md-person-add"></i> <span> Cutomer </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="typography.html">Typography</a></li>
-                        <li><a href="buttons.html">Buttons</a></li>
-                        <li><a href="panels.html">Panels</a></li>
-                        <li><a href="checkbox-radio.html">Checkboxs-Radios</a></li>
-                        <li><a href="tabs-accordions.html">Tabs &amp; Accordions</a></li>
-                        <li><a href="modals.html">Modals</a></li>
-                        <li><a href="bootstrap-ui.html">BS Elements</a></li>
-                        <li><a href="progressbars.html">Progress Bars</a></li>
-                        <li><a href="notification.html">Notification</a></li>
-                        <li><a href="sweet-alert.html">Sweet-Alert</a></li>
+                        <li><a href="{{ route('customer.create') }}">Add Customer</a></li>
+                        <li><a href="{{ route('customer.index') }}">All Customer</a></li>
                     </ul>
                 </li>
 

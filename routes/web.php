@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmpolyeeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -50,4 +51,16 @@ Route::middleware('auth')->group(function () {
  /**
  * Empolyee controller End
  */
+
+ /**
+ * Customer controller start
+ */
+
+ Route::resource('customer',CustomerController::class);
+ Route::get('customer/delete/{id}',[CustomerController::class,'delete'])->name('customer.delete');
+ Route::get('customer/restore/{id}',[CustomerController::class,'restore'])->name('customer.restore');
+
+/**
+* Customer controller End
+*/
 require __DIR__.'/auth.php';

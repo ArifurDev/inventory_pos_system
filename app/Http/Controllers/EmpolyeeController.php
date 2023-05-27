@@ -122,6 +122,9 @@ class EmpolyeeController extends Controller
        ]);
 
 
+       
+
+
        $empolyee_photo  = empolyee::find($id)->value('photo');
        if($request->hasFile('photo')){
         //product image update
