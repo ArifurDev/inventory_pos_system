@@ -13,7 +13,17 @@ return new class extends Migration
     {
         Schema::create('selary_emps', function (Blueprint $table) {
             $table->id();
+            $table->integer('empolyee_id');
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone');
+            $table->integer('selary');
+            $table->integer('advanch')->nullable();
+            $table->integer('due')->nullable();
+            $table->date('selary_date')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
