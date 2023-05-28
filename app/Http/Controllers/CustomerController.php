@@ -165,4 +165,10 @@ class CustomerController extends Controller
          );
          return redirect()->back()->with($notification);
     }
+    //single id find and get info
+    public function view($id)
+    {
+        $customers = Customer::find($id);
+        return view('dashbord.Customer.view', compact('customers'));
+    }
 }

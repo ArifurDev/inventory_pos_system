@@ -33,31 +33,32 @@
                                     <div class="panel-body">
                                         <div class="media-main">
                                             <a class="pull-left" href="#">
-                                                <img class="thumb-lg img-circle" src="{{ asset('upload/empolyee_image') }}/{{ $empolyee->photo }}" alt="">
+                                                <img class="thumb-lg img-circle" src="{{ asset('upload/customer_image') }}/{{ $customers->photo }}" alt="">
                                             </a>
                                             <div class="pull-right btn-group-sm">
-                                                <a href="{{ route('edit.empolyee',['empolyee'=>$empolyee->id]) }}" class="btn btn-success waves-effect waves-light tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit">
+                                                <a href="{{ route('customer.edit',['customer'=>$customers->id]) }}" class="btn btn-success waves-effect waves-light tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit">
                                                     <i class="fa fa-pencil"></i>
                                                 </a>
-                                              
+                                             
                                             </div>
+
                                             <div class="info">
-                                                <h4>{{ $empolyee->name }}</h4>
-                                                <p class="text-muted">{{ $empolyee->email }}</p>
+                                                <h4>{{ $customers->name }}</h4>
+                                                <p class="text-muted">{{ $customers->email }}</p>
                                             </div>
                                         </div>
                                         <div class="clearfix"></div>
                                         <hr>
                                         <ul class="social-links list-inline">
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Phone_Number: {{ $empolyee->phone }}</li>
-                                                <li class="list-group-item">NID No. {{ $empolyee->nid_number }}</li>
-                                                <li class="list-group-item">Vacation: {{ $empolyee->vacation }}</li>
-                                                <li class="list-group-item">Experience: {{ $empolyee->experience }}</li>
-                                                <li class="list-group-item">Salar: {{ $empolyee->salary }}</li>
-                                                <li class="list-group-item">City: {{ $empolyee->city }}</li>
-                                                <li class="list-group-item">Address: {{ $empolyee->address }}</li>
-
+                                                <li class="list-group-item">Phone_Number: {{ $customers->phone }}</li>
+                                                <li class="list-group-item">City: {{ $customers->city }}</li>
+                                                <li class="list-group-item">Address: {{ $customers->address }}</li>
+                                                <li class="list-group-item">Shop Name: {{ $customers->shopName }}</li>
+                                                <li class="list-group-item">Account Holder: {{ $customers->account_holder }}</li>
+                                                <li class="list-group-item">Account Number: {{ $customers->account_number }}</li>
+                                                <li class="list-group-item">Bank Bame: {{ $customers->bank_name }}</li>
+                                                <li class="list-group-item">Bank Branch: {{ $customers->bank_branch }}</li>
                                               </ul>
                                         </ul>
                                     </div> <!-- panel-body -->

@@ -3,6 +3,7 @@
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmpolyeeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,8 +60,21 @@ Route::middleware('auth')->group(function () {
  Route::resource('customer',CustomerController::class);
  Route::get('customer/delete/{id}',[CustomerController::class,'delete'])->name('customer.delete');
  Route::get('customer/restore/{id}',[CustomerController::class,'restore'])->name('customer.restore');
-
+ Route::get('customer/single/view/{id}',[CustomerController::class,'view'])->name('customer.view');
 /**
 * Customer controller End
+*/
+
+ /**
+ * Supplier controller start
+ */
+
+ Route::resource('supplier',SupplierController::class);
+
+ Route::get('supplier/delete/{id}',[SupplierController::class,'delete'])->name('supplier.delete');
+ Route::get('supplier/restore/{id}',[SupplierController::class,'restore'])->name('supplier.restore');
+//  Route::get('customer/single/view/{id}',[SupplierController::class,'view'])->name('customer.view');
+/**
+* Supplier controller End
 */
 require __DIR__.'/auth.php';

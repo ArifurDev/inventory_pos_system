@@ -42,20 +42,15 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span> Components </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <a href="#" class="waves-effect"><i class="md  md-share"></i><span> Supplier </span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="grid.html">Grid</a></li>
-                        <li><a href="portlets.html">Portlets</a></li>
-                        <li><a href="widgets.html">Widgets</a></li>
-                        <li><a href="nestable-list.html">Nesteble</a></li>
-                        <li><a href="ui-sliders.html">Sliders </a></li>
-                        <li><a href="gallery.html">Gallery </a></li>
-                        <li><a href="pricing.html">Pricing Table </a></li>
+                        <li><a href="{{ route('supplier.create') }}">Add Supplier</a></li>
+                        <li><a href="{{ route('supplier.index') }}">All Supplier</a></li>
                     </ul>
                 </li>
 
                 <li class="has_sub">
-                    <a href="#" class="waves-effect"><i class="md md-redeem"></i> <span> Icons </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                    <a href="#" class="waves-effect"><i class="fa fa-money"></i> <span> Empolyee selary </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="material-icon.html">Material Design</a></li>
                         <li><a href="ion-icons.html">Ion Icons</a></li>

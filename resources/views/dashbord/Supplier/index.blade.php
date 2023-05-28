@@ -31,7 +31,7 @@
                             <div class="col-md-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading ">
-                                        <h3 class="panel-title">All Customer</h3>
+                                        <h3 class="panel-title">All Supplier</h3>
                                         <!-- Custom width modal -->
                                         <button class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target="#custom-width-modal">Trash</button>
                                     </div>
@@ -54,30 +54,30 @@
                                                                             <th>Email</th>
                                                                             <th>Phone</th>
                                                                             <th>Photo</th>
+                                                                            <th>Type</th>
                                                                             <th>address</th>
                                                                             <th>shopName</th>
                                                                             <th>bank_name</th>
-                                                                            <th>city</th>
                                                                             <th>Action</th>
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
-                                                                        @foreach ($customers_trash as $trash_info)
+                                                                        @foreach ($supplier_trash as $trash_info)
                                                                         <tr>
                                                                             <td>{{ $trash_info->name }}</td>
                                                                             <td >{{ $trash_info->email }}</td>
                                                                             <td>{{ $trash_info->phone }}</td>
                                                                             <td>
-                                                                                <img  style="width: 70px; height: 70px; " src="{{ asset('upload/customer_image') }}/{{ $trash_info->photo }}" >
+                                                                                <img  style="width: 70px; height: 70px; " src="{{ asset('upload/supplier_image') }}/{{ $trash_info->photo }}" >
                                                                             </td>
+                                                                            <td>{{ $trash_info->type }}</td>
                                                                             <td>{{ $trash_info->address }}</td>
                                                                             <td>{{ $trash_info->shopName }}</td>
                                                                             <td>{{ $trash_info->bank_name }}</td>
-                                                                            <td>{{ $trash_info->city }}</td>
                                                                             <td>
                                                                                     <div class="btn-group btn-group-justified m-b-10">
-                                                                                        <a href="{{ route('customer.restore',$trash_info->id) }}" class="btn btn-primary waves-effect waves-light" title="restore" role="button"><i class="md  md-restore"></i></a>
-                                                                                        <a href="{{ route('customer.delete',$trash_info->id) }}" class="btn btn-danger waves-effect waves-light" title="remove" role="button"><i class="md  md-highlight-remove"></i></a>
+                                                                                        <a href="{{ route('supplier.restore',$trash_info->id) }}" class="btn btn-primary waves-effect waves-light" title="restore" role="button"><i class="md  md-restore"></i></a>
+                                                                                        <a href="{{ route('supplier.delete',$trash_info->id) }}" class="btn btn-danger waves-effect waves-light" title="remove" role="button"><i class="md  md-highlight-remove"></i></a>
                                                                                     </div>
                                                                             </td>
 
@@ -103,34 +103,34 @@
                                                           <th>Email</th>
                                                           <th>Phone</th>
                                                           <th>Photo</th>
+                                                          <th>Type</th>
                                                           <th>address</th>
                                                           <th>shopName</th>
                                                           <th>bank_name</th>
-                                                          <th>city</th>
                                                           <th>Action</th>
                                                         </tr>
                                                     </thead>
 
 
                                                     <tbody>
-                                                        @foreach ($customers as $customers)
+                                                        @foreach ($supplier as $supplier)
                                                         <tr>
-                                                            <td>{{ $customers->name }}</td>
-                                                            <td >{{ $customers->email }}</td>
-                                                            <td>{{ $customers->phone }}</td>
+                                                            <td>{{ $supplier->name }}</td>
+                                                            <td >{{ $supplier->email }}</td>
+                                                            <td>{{ $supplier->phone }}</td>
                                                             <td>
-                                                                <img  style="width: 70px; height: 70px; " src="{{ asset('upload/customer_image') }}/{{ $customers->photo }}" >
+                                                                <img  style="width: 70px; height: 70px; " src="{{ asset('upload/supplier_image') }}/{{ $supplier->photo }}" >
                                                             </td>
-                                                            <td>{{ $customers->address }}</td>
-                                                            <td>{{ $customers->shopName }}</td>
-                                                            <td>{{ $customers->bank_name }}</td>
-                                                            <td>{{ $customers->city }}</td>
+                                                            <td>{{ $supplier->type }}</td>
+                                                            <td>{{ $supplier->address }}</td>
+                                                            <td>{{ $supplier->shopName }}</td>
+                                                            <td>{{ $supplier->bank_name }}</td>
                                                             <td>
                                                                     <div class="btn-group btn-group-justified m-b-10">
-                                                                        <a href="{{ route('customer.view',['id'=>$customers->id]) }}" class="btn btn-primary waves-effect waves-light" title="view" role="button"><i class="md  md-remove-red-eye"></i></a>
-                                                                        <a href="{{ route('customer.edit',['customer'=>$customers->id]) }}" class="btn btn-danger waves-effect waves-light" title="edit" role="button"><i class="md md-mode-edit"></i></a>
+                                                                        <a href="{{ route('supplier.show',$supplier->id) }}" class="btn btn-primary waves-effect waves-light" title="view" role="button"><i class="md  md-remove-red-eye"></i></a>
+                                                                        <a href="{{ route('supplier.edit',$supplier->id) }}" class="btn btn-danger waves-effect waves-light" title="edit" role="button"><i class="md md-mode-edit"></i></a>
                                                                     </div>
-                                                                    <form action="{{ route('customer.destroy',['customer'=>$customers->id]) }}" method="post">
+                                                                    <form action="{{ route('supplier.destroy',$supplier->id) }}" method="post">
                                                                         @csrf
                                                                         @method('DELETE')
                                                                         <button class="btn btn-primary waves-effect waves-light" title="delete tmp" type="submit"><i class="md md-delete"></i></button>
