@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SelaryEmp;
+use App\Models\empolyee;
+use App\Models\Selary;
 use Illuminate\Http\Request;
 
-class SelaryEmpController extends Controller
+class SelaryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +21,8 @@ class SelaryEmpController extends Controller
      */
     public function create()
     {
-        //
+        $empolyee =  empolyee::all();
+        return view('dashbord.Selary.create',compact('empolyee'));
     }
 
     /**
@@ -34,7 +36,7 @@ class SelaryEmpController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(SelaryEmp $selaryEmp)
+    public function show(Selary $selary)
     {
         //
     }
@@ -42,7 +44,7 @@ class SelaryEmpController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(SelaryEmp $selaryEmp)
+    public function edit(Selary $selary)
     {
         //
     }
@@ -50,7 +52,7 @@ class SelaryEmpController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, SelaryEmp $selaryEmp)
+    public function update(Request $request, Selary $selary)
     {
         //
     }
@@ -58,7 +60,7 @@ class SelaryEmpController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(SelaryEmp $selaryEmp)
+    public function destroy(Selary $selary)
     {
         //
     }

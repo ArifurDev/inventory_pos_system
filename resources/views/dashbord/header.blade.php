@@ -22,8 +22,21 @@
         <!-- sweet alerts -->
         <link href="{{ asset('dashbord') }}/assets/sweet-alert/sweet-alert.min.css" rel="stylesheet">
 
+         <!-- Plugins css-->
+         <link href="{{ asset('dashbord') }}/assets/tagsinput/jquery.tagsinput.css" rel="stylesheet" />
+         <link href="{{ asset('dashbord') }}/assets/toggles/toggles.css" rel="stylesheet" />
+         <link href="{{ asset('dashbord') }}/assets/timepicker/bootstrap-timepicker.min.css" rel="stylesheet" />
+         <link href="{{ asset('dashbord') }}/assets/timepicker/bootstrap-datepicker.min.css" rel="stylesheet" />
+         <link href="{{ asset('dashbord') }}/assets/colorpicker/colorpicker.css" rel="stylesheet" type="text/css" />
+         <link href="{{ asset('dashbord') }}/assets/jquery-multi-select/multi-select.css"  rel="stylesheet" type="text/css" />
+         <link href="{{ asset('dashbord') }}/assets/select2/select2.css" rel="stylesheet" type="text/css" />
+
+
         <!-- Responsive-table -->
         <link href="{{ asset('dashbord') }}/assets/responsive-table/rwd-table.min.css" rel="stylesheet" type="text/css" media="screen"/>
+
+        <!--Form Wizard-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('dashbord') }}/assets/form-wizard/jquery.steps.css" />
 
         <!-- Custom Files -->
         <link href="{{ asset('dashbord') }}/css/helper.css" rel="stylesheet" type="text/css" />

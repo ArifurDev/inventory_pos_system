@@ -3,6 +3,8 @@
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmpolyeeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SelaryController;
+use App\Http\Controllers\SelaryEmpController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
@@ -73,8 +75,19 @@ Route::middleware('auth')->group(function () {
 
  Route::get('supplier/delete/{id}',[SupplierController::class,'delete'])->name('supplier.delete');
  Route::get('supplier/restore/{id}',[SupplierController::class,'restore'])->name('supplier.restore');
-//  Route::get('customer/single/view/{id}',[SupplierController::class,'view'])->name('customer.view');
+ Route::get('customer/single/view/{id}',[SupplierController::class,'view'])->name('customer.view');
 /**
 * Supplier controller End
+*/
+
+
+ /**
+ * Selary controller start
+ */
+
+ Route::resource('Selary',SelaryController::class);
+
+/**
+* Selary controller End
 */
 require __DIR__.'/auth.php';

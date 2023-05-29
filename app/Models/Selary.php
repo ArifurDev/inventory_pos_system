@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SelaryEmp extends Model
+class Selary extends Model
 {
     use HasFactory;
 }
