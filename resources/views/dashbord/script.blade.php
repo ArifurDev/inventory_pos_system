@@ -107,13 +107,13 @@
         // jQuery('#timepicker2').timepicker({showMeridian: false});
         // jQuery('#timepicker3').timepicker({minuteStep: 15});
 
-        // Date Picker
-        jQuery('#datepicker').datepicker();
-        jQuery('#datepicker-inline').datepicker();
-        jQuery('#datepicker-multiple').datepicker({
-            numberOfMonths: 3,
-            showButtonPanel: true
-        });
+        // // Date Picker
+        // jQuery('#datepicker').datepicker();
+        // jQuery('#datepicker-inline').datepicker();
+        // jQuery('#datepicker-multiple').datepicker({
+        //     numberOfMonths: 3,
+        //     showButtonPanel: true
+        // });
     });
 
 

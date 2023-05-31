@@ -86,6 +86,10 @@ Route::middleware('auth')->group(function () {
  */
 
  Route::resource('Selary',SelaryController::class);
+ Route::get('Selary/edit/{id}',[SelaryController::class,'edit'])->name('empolyee.Selary.edit');
+ Route::post('Selary/edit/{id}',[SelaryController::class,'update'])->name('empolyee.Selary.update');
+ Route::get('Selary/destroy/{id}',[SelaryController::class,'destroy'])->name('empolyee.Selary.destroy');
+
 
 /**
 * Selary controller End

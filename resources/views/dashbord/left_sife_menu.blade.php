@@ -53,8 +53,7 @@
                     <a href="#" class="waves-effect"><i class="fa fa-money"></i> <span> Empolyee selary </span> <span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('Selary.create') }}">Pay Empolyee selary</a></li>
-                        <li><a href="ion-icons.html">Ion Icons</a></li>
-                        <li><a href="font-awesome.html">Font awesome</a></li>
+                        <li><a href="{{ route('Selary.index') }}">All Empolyee selary</a></li>
                     </ul>
                 </li>
 
@@ -88,3 +87,25 @@
         <div class="clearfix"></div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
