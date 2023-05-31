@@ -30,7 +30,44 @@ class SelaryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'salary_date' => 'required',
+        ]);
+
+     $empolyee =   empolyee::where('email',$request->email)->first();
+
+         if (!empty($empolyee)) {
+            if ($empolyee->salary >= $request->advanch) {
+
+                $due_selary =$empolyee->salary - $request->advanch;
+                $Selary = new Selary;
+                $Selary->empolyee_id = $empolyee->id;
+                $Selary->name = $empolyee->name;
+                $Selary->email = $request->email;
+                $Selary->phone = $empolyee->phone;
+                $Selary->selary = $empolyee->salary;
+
+                $Selary->advanch = $request->advanch;
+                $Selary->due = $due_selary;
+                $Selary->salary_date = $request->salary_date;
+                $Selary->status = 'advanch';
+                $Selary->save();
+                $notification = array(
+                    'message' => 'Advanch selary pay Successfull',
+                    'alert-type' => 'success'
+                );
+                return redirect()->back()->with($notification);
+            }else{
+                $notification = array(
+                    'message' => 'advance salary is higher than salary ',
+                    'alert-type' => 'error'
+                );
+                return redirect()->back()->with($notification);
+            }
+
+         }
+
+
     }
 
     /**

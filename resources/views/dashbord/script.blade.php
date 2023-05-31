@@ -21,16 +21,9 @@
         <!-- CUSTOM JS -->
         <script src="{{ asset('dashbord') }}/js/jquery.app.js"></script>
 
-        <script src="{{ asset('dashbord') }}/assets/tagsinput/jquery.tagsinput.min.js"></script>
-        <script src="{{ asset('dashbord') }}/assets/toggles/toggles.min.js"></script>
+
         <script src="{{ asset('dashbord') }}/assets/timepicker/bootstrap-timepicker.min.js"></script>
         <script src="{{ asset('dashbord') }}/assets/timepicker/bootstrap-datepicker.js"></script>
-        <script type="text/javascript" src="{{ asset('dashbord') }}/assets/colorpicker/bootstrap-colorpicker.js"></script>
-        <script type="text/javascript" src="{{ asset('dashbord') }}/assets/jquery-multi-select/jquery.multi-select.js"></script>
-        <script type="text/javascript" src="{{ asset('dashbord') }}/assets/jquery-multi-select/jquery.quicksearch.js"></script>
-        <script src="{{ asset('dashbord') }}/assets/bootstrap-inputmask/bootstrap-inputmask.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="{{ asset('dashbord') }}/assets/spinner/spinner.min.js"></script>
-        <script src="{{ asset('dashbord') }}/assets/select2/select2.min.js" type="text/javascript"></script>
 
 
 <!-- sweet alerts -->
@@ -109,10 +102,10 @@
             delay: 100,
             time: 1200
         });
-        // Time Picker
-        jQuery('#timepicker').timepicker({defaultTIme: false});
-        jQuery('#timepicker2').timepicker({showMeridian: false});
-        jQuery('#timepicker3').timepicker({minuteStep: 15});
+        // // Time Picker
+        // jQuery('#timepicker').timepicker({defaultTIme: false});
+        // jQuery('#timepicker2').timepicker({showMeridian: false});
+        // jQuery('#timepicker3').timepicker({minuteStep: 15});
 
         // Date Picker
         jQuery('#datepicker').datepicker();

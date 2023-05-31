@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('selary');
             $table->integer('advanch')->nullable();
             $table->integer('due')->nullable();
-            $table->date('selary_date')->nullable();
+            $table->string('salary_date')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
             $table->softDeletes();

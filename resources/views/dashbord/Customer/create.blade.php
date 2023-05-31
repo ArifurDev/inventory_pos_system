@@ -35,6 +35,15 @@
                                     <div class="panel-heading"><h3 class="panel-title">Add Customer</h3></div>
 
                                     <div class="panel-body">
+                                        @if ($errors->any())
+                                        @foreach ($errors->all() as $error)
+                                                <ul>
+                                                    <li>
+                                                        <p class="text-light">{{ $error }}</p>
+                                                    </li>
+                                                </ul>
+                                        @endforeach
+                                       @endif
 
                                         <form role="form"  action="{{ route('customer.store') }}" method="POST" enctype="multipart/form-data">
                                             @csrf
