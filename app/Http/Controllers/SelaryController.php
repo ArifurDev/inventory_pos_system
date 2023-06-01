@@ -14,7 +14,7 @@ class SelaryController extends Controller
      */
     public function index()
     {
-        
+
         $selarys = Selary::all();
         return view('dashbord.Selary.show', compact('selarys'));
     }
@@ -35,14 +35,20 @@ class SelaryController extends Controller
     {
         $request->validate([
             'salary_date' => 'required',
+            'advanch' => 'required',
         ]);
 
      $empolyee =   empolyee::where('email',$request->email)->first();
 
-         if (!empty($empolyee)) {
-            if ($request->advanch) {
-                if ($empolyee->salary >= $request->advanch) {
+     $empolyee_id = $empolyee->id;
+     $salary_date = $request->salary_date;
 
+     $advance_salary  = DB::table('selaries')->where('empolyee_id',$empolyee_id)->where('salary_date',$salary_date)->first();
+
+         if (!empty($empolyee)) {
+            if ($advance_salary === null) {
+
+                if ($empolyee->salary >= $request->advanch) {
                     $due_selary =$empolyee->salary - $request->advanch;
                     $Selary = new Selary;
                     $Selary->empolyee_id = $empolyee->id;
@@ -60,6 +66,7 @@ class SelaryController extends Controller
                         'alert-type' => 'success'
                     );
                     return redirect()->back()->with($notification);
+
                 }else{
                     $notification = array(
                         'message' => 'advance salary is higher than salary ',
@@ -67,16 +74,22 @@ class SelaryController extends Controller
                     );
                     return redirect()->back()->with($notification);
                 }
+
             } else {
                 $notification = array(
-                    'message' => 'The advance salary field is required.',
+                    'message' => 'alrady pay this month advance salary',
                     'alert-type' => 'error'
                 );
                 return redirect()->back()->with($notification);
+
+
             }
 
 
          }
+
+
+
 
 
     }
