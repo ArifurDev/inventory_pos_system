@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmpolyeeController;
 use App\Http\Controllers\ProfileController;
@@ -93,5 +94,18 @@ Route::middleware('auth')->group(function () {
 
 /**
 * Selary controller End
+*/
+
+
+
+ /**
+ * Category controller start
+ */
+
+ Route::resource('Category',CategoryController::class);
+ Route::get('Category/restore/{id}',[CategoryController::class,'restore'])->name('Category.restore');
+ Route::get('Category/delete/{id}',[CategoryController::class,'delete'])->name('Category.delete');
+/**
+* Category controller End
 */
 require __DIR__.'/auth.php';

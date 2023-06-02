@@ -61,16 +61,10 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="#" class="waves-effect"><i class="md md-now-widgets"></i><span> Forms </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <a href="#" class="waves-effect"><i class="md  md-playlist-add"></i><span> Category </span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="form-elements.html">General Elements</a></li>
-                        <li><a href="form-validation.html">Form Validation</a></li>
-                        <li><a href="form-advanced.html">Advanced Form</a></li>
-                        <li><a href="form-wizard.html">Form Wizard</a></li>
-                        <li><a href="form-editor.html">WYSIWYG Editor</a></li>
-                        <li><a href="code-editor.html">Code Editors</a></li>
-                        <li><a href="form-uploads.html">Multiple File Upload</a></li>
-                        <li><a href="form-xeditable.html">X-editable</a></li>
+                        <li><a href="{{ route('Category.create') }}">Create a Category</a></li>
+                        <li><a href="{{ route('Category.index') }}">All Category</a></li>
                     </ul>
                 </li>
 
