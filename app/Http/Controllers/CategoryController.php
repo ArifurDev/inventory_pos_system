@@ -69,7 +69,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
        $category = Category::find($id);
-        return view('dashbord.Category.edit',compact('category'));
+        return view('dashbord.Category.edit',compact('category','category_info'));
     }
 
     /**

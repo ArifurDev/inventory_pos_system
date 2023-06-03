@@ -52,6 +52,7 @@
                                                                 <label for="inputName" class="col-sm-3 control-label">Category Name</label>
                                                                 <div class="col-sm-9">
                                                                   <input type="text" class="form-control" id="inputName" placeholder="Category Name" name="category_name" value="{{ $category->category_name }}">
+                                                             
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
