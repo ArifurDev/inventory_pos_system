@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmpolyeeController;
+use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SelaryController;
@@ -118,5 +119,15 @@ Route::middleware('auth')->group(function () {
  Route::resource("Product",ProductController::class);
 /**
 * product controller End
+*/
+
+
+ /**
+ * Expense controller start
+ */
+
+ Route::resource("expense",ExpenseController::class);
+/**
+* Expense controller End
 */
 require __DIR__.'/auth.php';

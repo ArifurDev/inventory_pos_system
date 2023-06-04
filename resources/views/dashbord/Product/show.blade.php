@@ -132,6 +132,7 @@
                                                                         <div class="btn-group btn-group-justified m-b-10">
                                                                             <a href="{{ route('Product.show',$product_info->id) }}" class="btn btn-primary waves-effect waves-light" title="view" role="button"><i class="md  ion-eye"></i></a>
                                                                             <a href="{{ route('Product.edit',$product_info->id) }}" class="btn btn-danger waves-effect waves-light" title="edit" role="button"><i class="md  md-edit"></i></a>
+
                                                                         </div>
                                                                         <form action="{{ route('Product.destroy',$product_info->id) }}" method="post">
                                                                             @csrf
