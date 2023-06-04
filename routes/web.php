@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmpolyeeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SelaryController;
 use App\Http\Controllers\SelaryEmpController;
@@ -107,5 +108,15 @@ Route::middleware('auth')->group(function () {
  Route::get('Category/delete/{id}',[CategoryController::class,'delete'])->name('Category.delete');
 /**
 * Category controller End
+*/
+
+
+ /**
+ * product controller start
+ */
+
+ Route::resource("Product",ProductController::class);
+/**
+* product controller End
 */
 require __DIR__.'/auth.php';

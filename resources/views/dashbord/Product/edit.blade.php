@@ -32,7 +32,7 @@
                             <!-- Basic example -->
                             <div class="col-md-12">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading"><h3 class="panel-title">Add Product</h3></div>
+                                    <div class="panel-heading"><h3 class="panel-title">Product Edit</h3></div>
 
                                     <div class="panel-body">
                                         @if ($errors->any())
@@ -45,15 +45,16 @@
                                         @endforeach
                                        @endif
 
-                                        <form role="form"  action="{{ route('Product.store') }}" method="POST" enctype="multipart/form-data">
+                                        <form role="form"  action="{{ route('Product.update',$product->id) }}" method="POST" enctype="multipart/form-data">
                                             @csrf
+                                            @method('PUT')
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="name">Category Name</label>
                                                         <select class="form-control form-white" data-placeholder="Supplier Type" name="category_id">
                                                            @foreach ($category as $category)
-                                                           <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                                                           <option value="{{ $category->id }}" @selected($category->id  === $product->category_id)>{{ $category->category_name }}</option>
                                                            @endforeach
                                                         </select>
                                                     </div>
@@ -61,46 +62,46 @@
                                                         <label for="email">Supplier Name</label>
                                                         <select class="form-control form-white" data-placeholder="Supplier Type" name="supplier_id">
                                                             @foreach ($supplier as $supplier)
-                                                            <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
+                                                            <option value="{{ $supplier->id }}" @selected($supplier->id  === $product->supplier_id)>{{ $supplier->name }}</option>
                                                             @endforeach
                                                          </select>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="Product">Product Name</label>
-                                                        <input type="text" class="form-control" id="Product" placeholder="Product Name" name="product_name">
+                                                        <input type="text" class="form-control" id="Product" placeholder="Product Name" name="product_name" value="{{ $product->product_name }}">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="Code">Product Code</label>
-                                                        <input type="text" class="form-control" id="Code" placeholder="Product Code"  name="product_code">
+                                                        <input type="text" class="form-control" id="Code" placeholder="Product Code"  name="product_code" value="{{ $product->product_code }}">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="Storehouse">Product Storehouse</label>
-                                                        <input type="text" class="form-control" id="Storehouse" placeholder="Product Storehouse" name="product_storehouse">
+                                                        <input type="text" class="form-control" id="Storehouse" placeholder="Product Storehouse" name="product_storehouse" value="{{ $product->product_storehouse }}">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="Route">Product Route</label>
-                                                        <input type="text" class="form-control" id="Route" placeholder="Product Route" name="product_route">
+                                                        <input type="text" class="form-control" id="Route" placeholder="Product Route" name="product_route" value="{{ $product->product_route }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="buy_date">Buy Date</label>
-                                                        <input type="date" class="form-control" id="buy_date" name="buy_date" >
+                                                        <input type="date" class="form-control" id="buy_date" name="buy_date" value="{{ $product->buy_date }}">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="expaire_date">Expaire Date</label>
-                                                        <input type="date" class="form-control" id="expaire_date" name="expaire_date">
+                                                        <input type="date" class="form-control" id="expaire_date" name="expaire_date" value="{{ $product->expaire_date }}">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="buying_price">Buying Price</label>
-                                                        <input type="number" class="form-control" id="buying_price" placeholder="Buying Price" name="buying_price" min="0">
+                                                        <input type="number" class="form-control" id="buying_price" placeholder="Buying Price" name="buying_price" min="0" value="{{ $product->buying_price }}">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="Address">Seling Price</label>
-                                                        <input type="number" class="form-control" id="Address" placeholder="Seling Price" name="seling_price" min="0">
+                                                        <input type="number" class="form-control" id="Address" placeholder="Seling Price" name="seling_price" min="0" value="{{ $product->seling_price }}">
                                                     </div>
                                                      <div class="form-group">
-                                                        <img  style="width: 70px; height: 70px; " src="" id="image" ><br>
+                                                        <img  style="width: 70px; height: 70px; " src="{{ asset('upload/product_image') }}/{{ $product->product_image }}" id="image" ><br>
                                                         <label for="Photo">Product Image</label>
                                                         <input type="file" class="form-control" id="photo"  name="product_image" accept="image/*" onchange="readURL(this)">
                                                     </div>
