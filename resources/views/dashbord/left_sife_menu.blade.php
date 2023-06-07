@@ -77,10 +77,19 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="#" class="waves-effect"><i class="md md-view-list"></i><span> Expense </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <a href="#" class="waves-effect"><i class="md  md-assignment"></i><span> Expense </span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('expense.create') }}">Add Expense</a></li>
                         <li><a href="{{ route('expense.index') }}">Show Expense</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="has_sub">
+                    <a href="#" class="waves-effect"><i class="md  md-assignment-turned-in"></i><span> Attendance  </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('attendance.create') }}">Add Attendance</a></li>
+                        <li><a href="{{ route('attendance.index') }}">Show Attendance</a></li>
                     </ul>
                 </li>
 

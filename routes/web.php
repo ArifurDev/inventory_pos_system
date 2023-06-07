@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmpolyeeController;
@@ -129,5 +130,16 @@ Route::middleware('auth')->group(function () {
  Route::resource("expense",ExpenseController::class);
 /**
 * Expense controller End
+*/
+
+
+ /**
+ * attendance controller start
+ */
+
+ Route::resource("attendance",AttendanceController::class);
+ Route::post('update',[AttendanceController::class, 'update_attendance'])->name('attendance.update');
+/**
+* attendance controller End
 */
 require __DIR__.'/auth.php';
