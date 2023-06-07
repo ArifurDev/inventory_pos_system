@@ -1,8 +1,14 @@
+<?php
+ $setting = app\Models\Setting::first()->get();
+
+?>
+
+
 <div class="topbar">
     <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center">
-            <a href="index.html" class="logo"><i class="md md-terrain"></i> <span>Moltran </span></a>
+            <a href="index.html" class="logo"><i class="md md-terrain"></i> <span>arr</span></a>
         </div>
     </div>
     <!-- Button mobile view to collapse sidebar menu -->
@@ -80,6 +86,7 @@
                             </li>
                         </ul>
                     </li>
+
                     <li class="hidden-xs">
                         <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i class="md md-crop-free"></i></a>
                     </li>
@@ -90,7 +97,7 @@
                         <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{ asset('dashbord') }}/images/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
                         <ul class="dropdown-menu">
                             <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile</a></li>
-                            <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
+                            <li><a href="{{ route('setting.index') }}"><i class="md md-settings"></i> Settings</a></li>
                             <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
                             <li>
                                 <form action="{{ route('logout') }}" method="post" class="ml-1">

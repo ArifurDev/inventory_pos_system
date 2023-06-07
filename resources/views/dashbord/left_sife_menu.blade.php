@@ -9,7 +9,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">John Doe <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile<div class="ripple-wrapper"></div></a></li>
-                        <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
+                        <li><a href="{{ route('setting.index') }}"><i class="md md-settings"></i> Settings</a></li>
                         <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
                         <li><a href="javascript:void(0)"><i class="md md-settings-power"></i> Logout</a></li>
                     </ul>

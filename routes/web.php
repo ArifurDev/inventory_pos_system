@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SelaryController;
 use App\Http\Controllers\SelaryEmpController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
@@ -141,5 +142,16 @@ Route::middleware('auth')->group(function () {
  Route::post('update',[AttendanceController::class, 'update_attendance'])->name('attendance.update');
 /**
 * attendance controller End
+*/
+
+
+
+ /**
+ * setting controller start
+ */
+
+ Route::resource("setting",SettingController::class);
+/**
+* setting controller End
 */
 require __DIR__.'/auth.php';
