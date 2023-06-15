@@ -119,9 +119,14 @@ Route::middleware('auth')->group(function () {
  */
 
  Route::resource("Product",ProductController::class);
-/**
-* product controller End
-*/
+ //product import and export page show
+ Route::get('import/product',[ProductController::class,'import_product'])->name('import_Export_product_page');
+ //product export
+ Route::get('export/product',[ProductController::class,'export'])->name('export.product');
+
+ /**
+ * product controller End
+ */
 
 
  /**

@@ -8,7 +8,7 @@
                 <div class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">John Doe <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile<div class="ripple-wrapper"></div></a></li>
+                        <li><a href="{{ route('profile.edit') }}"><i class="md md-face-unlock"></i> Profile<div class="ripple-wrapper"></div></a></li>
                         <li><a href="{{ route('setting.index') }}"><i class="md md-settings"></i> Settings</a></li>
                         <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
                         <li><a href="javascript:void(0)"><i class="md md-settings-power"></i> Logout</a></li>
@@ -73,6 +73,7 @@
                     <ul class="list-unstyled">
                         <li><a href="{{ route('Product.create') }}">Add Product</a></li>
                         <li><a href="{{ route('Product.index') }}">Show Product</a></li>
+                        <li><a href="{{ route('import_Export_product_page') }}">Import Product</a></li>
                     </ul>
                 </li>
 
@@ -90,6 +91,13 @@
                     <ul class="list-unstyled">
                         <li><a href="{{ route('attendance.create') }}">Add Attendance</a></li>
                         <li><a href="{{ route('attendance.index') }}">Show Attendance</a></li>
+                    </ul>
+                </li>
+                <li class="has_sub">
+                    <a href="#" class="waves-effect"><i class="md md-settings"></i><span>Setting</span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('setting.create') }}">Setting Setup</a></li>
+                        <li><a href="{{ route('setting.index') }}">Setting Check</a></li>
                     </ul>
                 </li>
 

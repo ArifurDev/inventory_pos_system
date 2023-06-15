@@ -1,11 +1,13 @@
 
-
+<?php
+    $setting_setup_info = App\Models\Setting::all()->first();
+?>
 
 <div class="topbar">
     <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center">
-            <a href="index.html" class="logo"><i class="md md-terrain"></i> <span>arr</span></a>
+            <a href="#" class="logo"><img style="width: 20%" src="{{ asset('upload/Setting_image') }}/{{ $setting_setup_info->logo }}" alt=""> <span>{{ $setting_setup_info->name }}</span></a>
         </div>
     </div>
     <!-- Button mobile view to collapse sidebar menu -->
@@ -93,7 +95,7 @@
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="{{ asset('dashbord') }}/images/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
                         <ul class="dropdown-menu">
-                            <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile</a></li>
+                            <li><a href="{{ route('profile.edit') }}"><i class="md md-face-unlock"></i> Profile</a></li>
                             <li><a href="{{ route('setting.index') }}"><i class="md md-settings"></i> Settings</a></li>
                             <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
                             <li>

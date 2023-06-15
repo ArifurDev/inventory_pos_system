@@ -53,3 +53,5 @@
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 
         <script src="{{ asset('dashbord') }}/js/modernizr.min.js"></script>
+
+        

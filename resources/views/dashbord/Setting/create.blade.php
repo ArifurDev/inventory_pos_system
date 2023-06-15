@@ -62,10 +62,6 @@
                                                 <label for="City">City</label>
                                                 <input type="text" class="form-control" id="City" placeholder="City" name="city">
                                             </div>
-                                            <div class="form-group">
-                                                <label for="color">Color</label>
-                                                <input type="color" class="form-control" id="color" placeholder="City" name="color">
-                                            </div>
                                              <div class="form-group">
                                                 <img  style="width: 70px; height: 70px; " src="" id="image" ><br>
                                                 <label for="Photo">System Logo</label>

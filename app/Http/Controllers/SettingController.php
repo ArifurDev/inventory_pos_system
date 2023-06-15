@@ -12,8 +12,8 @@ class SettingController extends Controller
      */
     public function index()
     {
-        $setting = Setting::where('id','1')->first();
-        return view('dashbord.Setting.edit',compact('setting'));
+        $setting = Setting::all();
+        return view('dashbord.Setting.index',compact('setting'));
     }
 
     /**
@@ -29,28 +29,40 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'logo' => 'mimes:png',
-           ]);
-        //logo upload image
+      $setting_count =  Setting::all()->count();
+      if ($setting_count == '0') {
+               $request->validate([
+                'logo' => 'mimes:png',
+               ]);
+            //logo upload image
 
-         $file_name = auth()->id() . '-' . time() . '.' . $request->file('logo')->getClientOriginalExtension();
-         $img = Image::make($request->file('logo'));
-         $img->save(base_path('public/upload/Setting_image/' . $file_name), 80);
+             $file_name = auth()->id() . '-' . time() . '.' . $request->file('logo')->getClientOriginalExtension();
+             $img = Image::make($request->file('logo'));
+             $img->save(base_path('public/upload/Setting_image/' . $file_name), 80);
 
-        $data = new Setting;
-        $data->address = $request->address;
-        $data->phone = $request->phone;
-        $data->city = $request->city;
-        $data->logo = $file_name;
-        $data->name = $request->name;
-        $data->color = $request->color;
-        $data->save();
+            $data = new Setting;
+            $data->address = $request->address;
+            $data->phone = $request->phone;
+            $data->city = $request->city;
+            $data->logo = $file_name;
+            $data->name = $request->name;
+            $data->color = $request->color;
+            $data->save();
+            $notification = array(
+                'message' => 'Setting system info insert Successfull',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notification);
+      } else {
         $notification = array(
-            'message' => 'Setting system info insert Successfull',
-            'alert-type' => 'success'
+            'message' => 'sorry alrady info save',
+            'alert-type' => 'error'
         );
         return redirect()->back()->with($notification);
+
+      }
+
+
     }
 
     /**
@@ -66,7 +78,7 @@ class SettingController extends Controller
      */
     public function edit(Setting $setting)
     {
-
+        return view('dashbord.Setting.edit',compact('setting'));
     }
 
     /**
