@@ -1,7 +1,4 @@
-<?php
- $setting = app\Models\Setting::first()->get();
 
-?>
 
 
 <div class="topbar">
