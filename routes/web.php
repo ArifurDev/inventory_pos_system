@@ -123,6 +123,8 @@ Route::middleware('auth')->group(function () {
  Route::get('import/product',[ProductController::class,'import_product'])->name('import_Export_product_page');
  //product export
  Route::get('export/product',[ProductController::class,'export'])->name('export.product');
+ //product export
+ Route::post('import/product',[ProductController::class,'import'])->name('import.product');
 
  /**
  * product controller End

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\ProductsExport;
+use App\Imports\ProductsImport;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Supplier;
@@ -192,5 +193,28 @@ class ProductController extends Controller
     public function export()
     {
         return Excel::download(new ProductsExport, 'products.xlsx');
+    }
+
+    /**
+     * import product
+     */
+    public function import(Request $request)
+    {
+        $request->validate([
+            'Import_file' => 'required',
+        ]);
+
+      $import_product =  Excel::import(new ProductsImport, $request->file('Import_file'));
+      if ($import_product) {
+            $notification = array(
+                'message' => 'Product Import Successfull',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notification);
+
+      } else {
+        return redirect()->back();
+      }
+
     }
 }

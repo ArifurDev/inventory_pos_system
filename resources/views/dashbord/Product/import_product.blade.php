@@ -50,12 +50,12 @@
                                         @endforeach
                                        @endif
 
-                                        <form role="form"  action="{{ route('Product.store') }}" method="POST" enctype="multipart/form-data">
+                                        <form role="form"  action="{{ route('import.product') }}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
                                                 <div class="form-group">
                                                     <label for="Import">Xlsx File Import</label>
-                                                    <input type="file" class="form-control" id="Import" name="Import" >
+                                                    <input type="file" class="form-control" id="Import" name="Import_file" >
                                                 </div>
                                             </div>
 
@@ -63,6 +63,7 @@
 
                                             <button type="submit" class="btn btn-primary waves-effect waves-light"><i class="mdi md-file-upload"></i> Import Product</button>
                                         </form>
+                                        <strong class="text-danger p-2">Please download the Xlsx file and clear .Now you wrrite your product by listing and import it again .....Thank You.</strong>
                                     </div><!-- panel-body -->
                                 </div> <!-- panel -->
                             </div> <!-- col-->
