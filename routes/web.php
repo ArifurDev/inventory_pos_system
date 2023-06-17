@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmpolyeeController;
 use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\PosController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SelaryController;
@@ -160,5 +161,16 @@ Route::middleware('auth')->group(function () {
  Route::resource("setting",SettingController::class);
 /**
 * setting controller End
+*/
+
+ /**
+ * Pos controller start
+ */
+
+ Route::controller(PosController::class)->group(function () {
+    Route::get('/pos', 'index')->name('pos.index');
+});
+/**
+* Pos controller End
 */
 require __DIR__.'/auth.php';

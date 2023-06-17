@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a3b3fd27bfbcf0c909af967337aaa8a",
+    "content-hash": "22e57ea6c27133692e95e398d1c4c91b",
     "packages": [
         {
             "name": "brick/math",
@@ -2253,6 +2253,75 @@
                 "source": "https://github.com/MarkBaker/PHPMatrix/tree/3.0.1"
             },
             "time": "2022-12-02T22:17:43+00:00"
+        },
+        {
+            "name": "mindscms/laravelshoppingcart",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mindscms/laravelshoppingcart.git",
+                "reference": "0ef2daf867c1699f23966f282db342630c3f9d00"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mindscms/laravelshoppingcart/zipball/0ef2daf867c1699f23966f282db342630c3f9d00",
+                "reference": "0ef2daf867c1699f23966f282db342630c3f9d00",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/events": "^7|^8|^9|^10",
+                "illuminate/session": "^7|^8|^9|^10",
+                "illuminate/support": "^7|^8|^9|^10"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1",
+                "orchestra/testbench": "^7",
+                "phpunit/phpunit": "^10"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider"
+                    ],
+                    "aliases": {
+                        "Cart": "Gloudemans\\Shoppingcart\\Facades\\Cart"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gloudemans\\Shoppingcart\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Gloudemans",
+                    "email": "info@robgloudemans.nl"
+                },
+                {
+                    "name": "Michael V.",
+                    "email": "michael@michaelbelgium.me"
+                },
+                {
+                    "name": "Sami Mansour",
+                    "email": "mindscms@gmail.com"
+                }
+            ],
+            "description": "Laravel Shopping cart",
+            "keywords": [
+                "laravel",
+                "shoppingcart"
+            ],
+            "support": {
+                "issues": "https://github.com/mindscms/laravelshoppingcart/issues",
+                "source": "https://github.com/mindscms/laravelshoppingcart/tree/v2.1.0"
+            },
+            "time": "2023-03-07T08:56:27+00:00"
         },
         {
             "name": "monolog/monolog",

@@ -25,6 +25,10 @@
                     <a href="{{ url('/dashboard') }}" class="waves-effect active"><i class="md md-home"></i><span> Dashboard </span></a>
                 </li>
 
+                <li>
+                    <a href="{{ route('pos.index') }}" class="waves-effect"><i class="md md-add-shopping-cart"></i><strong> Pos </strong><span class="pull-right"><i class="md md-add"></i></span></a>
+                </li>
+
                 <li class="has_sub">
                     <a href="#" class="waves-effect"><i class="md md-group-add"></i><span> Empolyee </span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
