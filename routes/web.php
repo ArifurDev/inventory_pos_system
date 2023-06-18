@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmpolyeeController;
@@ -172,5 +173,20 @@ Route::middleware('auth')->group(function () {
 });
 /**
 * Pos controller End
+*/
+
+ /**
+ * Cart controller start
+ */
+
+ Route::controller(CartController::class)->group(function () {
+    Route::post('/add/cart', 'add_cart')->name('add.cart');
+    Route::post('/cart/update/{rowId}', 'cart_update')->name('update.cart');
+    Route::get('/cart/item/remove/{rowId}', 'cart_item_remove')->name('remove.cart.item');
+
+    Route::post('/create/invoice', 'invoice')->name('cart.invoice');
+});
+/**
+* Cart controller End
 */
 require __DIR__.'/auth.php';
