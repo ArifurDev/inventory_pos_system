@@ -184,7 +184,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/cart/update/{rowId}', 'cart_update')->name('update.cart');
     Route::get('/cart/item/remove/{rowId}', 'cart_item_remove')->name('remove.cart.item');
 
-    Route::post('/create/invoice', 'invoice')->name('cart.invoice');
+    Route::post('/create/invoice', 'invoice')->name('cart.invoice');//show all cart and customar information in invoice
+    Route::post('/order/store', 'order_store')->name('store.order');//order information save in database
+    //panding order
+    Route::get('/panding/order', 'panding_order')->name('panding.order');
+
 });
 /**
 * Cart controller End

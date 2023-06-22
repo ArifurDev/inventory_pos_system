@@ -82,6 +82,15 @@
                 </li>
 
                 <li class="has_sub">
+                    <a href="#" class="waves-effect"><i class="fa fa-reorder"></i><span> Order </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ route('panding.order') }}">Panding Order</a></li>
+                        <li><a href="{{ route('Product.index') }}">Show Product</a></li>
+                        <li><a href="{{ route('import_Export_product_page') }}">Import Product</a></li>
+                    </ul>
+                </li>
+
+                <li class="has_sub">
                     <a href="#" class="waves-effect"><i class="md  md-assignment"></i><span> Expense </span><span class="pull-right"><i class="md md-add"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('expense.create') }}">Add Expense</a></li>

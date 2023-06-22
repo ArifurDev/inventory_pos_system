@@ -38,7 +38,7 @@
                                             <div class="pull-left">
                                                 <address>
                                                     <strong>{{ $setting->name }}, Inc.</strong><br>
-                                                    {{ $setting->address }}<br>                   
+                                                    {{ $setting->address }}<br>
                                                     <abbr title="Phone">P:</abbr> {{ $setting->phone }}
                                                 </address>
                                             </div>
@@ -49,14 +49,14 @@
                                             </div>
                                         </div>
                                         <hr>
-                                      
+
                                         <div class="row">
                                             <div class="col-md-12">
-                                                
+
                                                 <div class="pull-left m-t-30">
                                                     <address>
                                                       <strong>{{ $customer_info->name }}, Inc.</strong><br>
-                                                      {{ $customer_info->address }}<br>                   
+                                                      {{ $customer_info->address }}<br>
                                                       <abbr title="Phone">P:</abbr> {{ $customer_info->phone }}
                                                       </address>
                                                 </div>
@@ -89,13 +89,13 @@
                                                             @foreach ($cart_item_show as $item)
                                                             <tr>
                                                                 <td>{{ $count++ }}</td>
-                                                                <td>{{ $item->name }}</td>                                                               
+                                                                <td>{{ $item->name }}</td>
                                                                 <td>{{ $item->qty }}</td>
                                                                 <td>{{ $item->price }}</td>
                                                                 <td>{{ $item->price*$item->qty }}</td>
                                                             </tr>
                                                             @endforeach
-                                                         
+
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -103,17 +103,79 @@
                                         </div>
                                         <div class="row" style="border-radius: 0px;">
                                             <div class="col-md-3 col-md-offset-9">
-                                                <p class="text-right"><b>Sub-total:</b> {{ Cart::subtotal(); }}</p>                                              
+                                                <p class="text-right"><b>Sub-total:</b> {{ Cart::subtotal(); }}</p>
                                                 <p class="text-right">VAT: {{ Cart::tax(); }} (5%)</p>
                                                 <hr>
                                                 <h3 class="text-right">Total: {{ Cart::total(); }}</h3>
                                             </div>
                                         </div>
                                         <hr>
+                                                                                        <!-- sample modal content -->
+                                                                                        <div id="custom-width-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+                                                                                            <div class="modal-dialog" >
+                                                                                                <div class="modal-content">
+                                                                                                    <div class="modal-header">
+                                                                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                                                                            <h4 class="modal-title" id="custom-width-modalLabel">Order Payment</h4>
+                                                                                                    </div>
+
+
+                                                                                                    <div class="modal-body">
+                                                                                                        @if ($errors->any())
+                                                                                                        @foreach ($errors->all() as $error)
+                                                                                                                <ul>
+                                                                                                                    <li>
+                                                                                                                        <p class="text-light">{{ $error }}</p>
+                                                                                                                    </li>
+                                                                                                                </ul>
+                                                                                                        @endforeach
+                                                                                                       @endif
+                                                                                                       <div class="row">
+                                                                                                        <h4>{{ $customer_info->name }}</h4>
+                                                                                                        <h4>Total: {{ Cart::total(); }}</h4>
+                                                                                                    </div>
+                                                                                                   
+                                                                                                        <form role="form"  action="{{ route('store.order') }}" method="POST" >
+                                                                                                            @csrf
+                                                                                                            <div class="row">
+                                                                                                                    <input type="hidden" name="customer_id" value="{{ $customer_info->id }}">
+                                                                                                                    <div class="form-group">
+                                                                                                                        <label for="payment_status">Payment Status</label>
+                                                                                                                        <select class="form-control" id="payment_status" name="payment_status">
+                                                                                                                            <option value="handcash">Hand Cash</option>
+                                                                                                                            <option value="check">Check</option>
+                                                                                                                            <option value="due">Due</option>
+                                                                                                                        </select>
+                                                                                                                    </div>
+                                                                                                                    <div class="form-group">
+                                                                                                                        <label for="Pay">Pay</label>
+                                                                                                                        <input type="number" class="form-control" id="Pay" placeholder="Pay" name="pay" min="0">
+                                                                                                                    </div>
+                                                                                                                    <div class="form-group">
+                                                                                                                        <label for="Due">Due</label>
+                                                                                                                        <input type="number" class="form-control" id="Due" placeholder="Due" name="due" min="0">
+                                                                                                                    </div>
+
+
+
+
+                                                                                                            </div>
+
+
+
+                                                                                                            <button type="submit" class="btn btn-purple waves-effect waves-light">Submit</button>
+                                                                                                        </form>
+
+                                                                                                    </div>
+
+                                                                                                </div><!-- /.modal-content -->
+                                                                                              </div><!-- /.modal-dialog -->
+                                                                                    </div><!-- /.modal -->
                                         <div class="hidden-print">
                                             <div class="pull-right">
                                                 <a href="#" class="btn btn-inverse waves-effect waves-light"><i class="fa fa-print"></i></a>
-                                                <a href="#" class="btn btn-primary waves-effect waves-light">Submit</a>
+                                                <button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#custom-width-modal">Submit</button>
+
                                             </div>
                                         </div>
                                     </div>

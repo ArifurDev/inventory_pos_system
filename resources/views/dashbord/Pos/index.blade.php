@@ -91,14 +91,14 @@
                                                             <span>Price : {{ Cart::subtotal(); }}</span><br>
                                                             <span>Vat : {{ Cart::tax(); }} (5%)</span><br>
                                                             <span>Total Price : {{ Cart::total(); }}</span><br>
-                                                            
-                                                           
+
+
 
                                                         </div>
-                                                        
-                                                        
+
+
                                                     </div>
-                                                    <form action="{{ route('cart.invoice') }}" method="post">
+                                                    <form action="{{ route('cart.invoice') }}" method="POST" enctype="multipart/form-data">
                                                         @csrf
                                                         <div class="row">
                                                             @if ($errors->any())
@@ -118,15 +118,15 @@
                                                                     @endforeach
                                                                 </select>
                                                             </div>
-        
+
                                                             <button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#custom-width-modal">Add Cusstomer</button>
-                                                            
+
                                                         </div>
                                                         <button type="submit" class="btn btn-danger waves-effect waves-light" style="margin-left: 40%;margin-top: 5%;margin-bottom: 2%;">Invoice</button>
                                                     </form>
 
                                                 </div>
-                                            
+
                                             </div>
                                                 <!-- sample modal content -->
                                         <div id="custom-width-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
@@ -229,7 +229,7 @@
                                                         @foreach ($product as $item)
 
                                                             <tr>
-                                                                <form action="{{ route('add.cart') }}" method="post" enctype="multipart/form-data">
+                                                                <form action="{{ route('add.cart') }}" method="POST">
                                                                     @csrf
                                                                         <input type="hidden" name="id" value="{{ $item->id }}">
                                                                         <input type="hidden" name="name" value="{{ $item->product_name }}">
