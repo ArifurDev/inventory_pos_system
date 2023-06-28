@@ -7,6 +7,7 @@ use App\Models\Setting;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class CartController extends Controller
 {
@@ -148,6 +149,56 @@ class CartController extends Controller
         return view('dashbord.Order.pandingorder',compact('panding_order'));
     }
 
+    //complete order
+    public function complete_order(){
+        $complete_order =  DB::table('orders')
+                        ->join('customers','orders.customar_id','customers.id')
+                        ->select('customers.name','customers.email','orders.*')
+                        ->where('order_status','complete')->get();
+        return view('dashbord.Order.completeorder',compact('complete_order'));
+    }
 
+    //view selected order full dateils
+    public function view_panding_order($id){
+        $order =  DB::table('orders')
+                        ->join('customers','orders.customar_id','customers.id')
+                        ->select('customers.name','customers.email','customers.address','customers.phone','orders.*')
+                        ->where('orders.id',$id)->first();
+        $order_datils =  DB::table('orderdatils')
+                        ->join('products','orderdatils.product_id','products.id')
+                        ->select('products.product_code','products.product_name','orderdatils.*')
+                        ->where('order_id',$id)->get();
+        $setting = Setting::latest()->first();
+        return view('dashbord.Order.invoice',compact('order','order_datils','setting'));
+    }
+
+    public function order_status_change($id)
+    {
+
+         DB::table('orders')->where('id',$id)->update([
+            'order_status' => 'complete'
+         ]);
+         $notification = array(
+            'message' => 'Complete This Order',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('dashboard')->with($notification);
+    }
+
+    public function download_invoice($id)
+    {
+        $order =  DB::table('orders')
+                        ->join('customers','orders.customar_id','customers.id')
+                        ->select('customers.name','customers.email','customers.address','customers.phone','orders.*')
+                        ->where('orders.id',$id)->first();
+        $order_datils =  DB::table('orderdatils')
+                        ->join('products','orderdatils.product_id','products.id')
+                        ->select('products.product_code','products.product_name','orderdatils.*')
+                        ->where('order_id',$id)->get();
+        $setting = Setting::latest()->first();
+
+        $pdf = PDF::loadView('dashbord.Order.download',compact('order','order_datils','setting'));
+	    return $pdf->download('Invoice.pdf');
+    }
 
 }

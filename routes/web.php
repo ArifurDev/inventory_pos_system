@@ -188,6 +188,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/order/store', 'order_store')->name('store.order');//order information save in database
     //panding order
     Route::get('/panding/order', 'panding_order')->name('panding.order');
+    Route::get('view/panding/order/{id}', 'view_panding_order')->name('view.panding.order');//view selected panding order full dateils
+    Route::get('panding/order/status/change/{id}', 'order_status_change')->name('order.status.change');//view selected panding order full dateils
+    //panding order
+    Route::get('/complete/order', 'complete_order')->name('complete.order');
+    //invoice download  pdf
+     Route::get('/download/invoice/{id}', 'download_invoice')->name('download.invoice');
 
 });
 /**

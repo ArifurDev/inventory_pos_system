@@ -31,7 +31,7 @@
                             <div class="col-md-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading ">
-                                        <h3 class="panel-title">Show Pending Order</h3>
+                                        <h3 class="panel-title">Show Complete Order</h3>
                                         <!-- Custom width modal -->
                                         {{-- <button class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target="#custom-width-modal">Trash</button> --}}
                                     </div>
@@ -58,7 +58,7 @@
 
 
                                                     <tbody>
-                                                        @foreach ($panding_order as $order_info)
+                                                        @foreach ($complete_order as $order_info)
                                                         <tr class="p-2">
                                                             <td>{{ $order_info->name }}</td>
                                                             <td>{{ $order_info->total_products }}</td>
